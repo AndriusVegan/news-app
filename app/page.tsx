@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Homepage() {
-  return (
-    <div>Vegan Homepage</div>
-  )
+  return <div>{/*NewsList component  */}</div>;
 }
 
-export default Homepage
+export default Homepage;
