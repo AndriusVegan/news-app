@@ -3,8 +3,7 @@ import { categories } from "../constants";
 import NavLink from "./NavLink";
 
 function NavLinks() {
-  return;
-  <nav>
+  return ( <nav>
     {
       categories.map[
         (category) => (
@@ -12,7 +11,8 @@ function NavLinks() {
         )
       ]
     }
-  </nav>;
+  </nav>)
+  
 }
 
 export default NavLinks;
