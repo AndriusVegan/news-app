@@ -82,4 +82,4 @@ const fetchNews = async (
 export default fetchNews;
 
 // run in the terminal stepzen import curl "url below"
-// http://api.mediastack.com/v1/news?access_key=d374024a3dc67b6dfbc235e022f8f71f also could add categories at the end
+// http://api.mediastack.com/v1/news?access_key= also could add categories at the end
