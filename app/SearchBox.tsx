@@ -17,9 +17,11 @@ function SearchBox() {
     >
       <input
         type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         placeholder="Search keywords ..."
         className="w-full h-14 rounded-sm placeholder-gray-500 text-gray-500 outline-none bg-transparent dark:text-orange-400 flex-1"
-      ></input>
+      />
       <button
         type="submit"
         disabled={!input}

@@ -15,7 +15,7 @@ type Pagination = {
   count: Int;
   limit: Int;
   offset: Int;
-  totals: Int;
+  total: Int;
 };
 
 type NewsResponse = {
@@ -24,9 +24,9 @@ type NewsResponse = {
 };
 
 type Category =
-  | "general"
   | "business"
   | "entertainment"
+  | "general"
   | "health"
   | "science"
   | "sports"

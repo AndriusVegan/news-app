@@ -6,12 +6,10 @@ const fetchNews = async (
   keywords?: string,
   isDynamic?: boolean
 ) => {
-  //GraphQL query
-
   const query = gql`
     query MyQuery(
       $access_key: String!
-      $catagories: String!
+      $categories: String!
       $keywords: String
     ) {
       myQuery(
@@ -42,13 +40,14 @@ const fetchNews = async (
       }
     }
   `;
-  // fetch function with next js
+
+  // Fetch function with Next.js 13 caching...
   const res = await fetch(
-    `https://manville.stepzen.net/api/awesome-kudu/__graphql`,
+    "https://manville.stepzen.net/api/awesome-kudu/__graphql",
     {
       method: "POST",
       cache: isDynamic ? "no-cache" : "default",
-      next: isDynamic ? { revalidate: 0 } : { revalidate: 30 },
+      next: isDynamic ? { revalidate: 0 } : { revalidate: 20 },
       headers: {
         "Content-Type": "application/json",
         Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
@@ -64,18 +63,17 @@ const fetchNews = async (
     }
   );
 
-  console.log(
-    "LOADING NEW DATA FROM API for category >>>>",
-    category,
-    keywords
-  );
-  //   return res;
+  // console.log(
+  //   "LOADING NEW DATA FROM API for category >>> ",
+  //   category,
+  //   keywords
+  // );
+
   const newsResponse = await res.json();
 
-  // sort by images and no images
+  // Sort function by images vs not images present
   const news = sortNewsByImage(newsResponse.data.myQuery);
 
-  // return the news
   return news;
 };
 
@@ -83,3 +81,5 @@ export default fetchNews;
 
 // run in the terminal stepzen import curl "url below"
 // http://api.mediastack.com/v1/news?access_key= also could add categories at the end
+
+//     "https://manville.stepzen.net/api/awesome-kudu/__graphql",

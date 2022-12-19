@@ -1,7 +1,6 @@
 import React from "react";
 import LiveTimeStamp from "./LiveTimeStamp";
 import ReadMoreButton from "./ReadMoreButton";
-import LiveTimeStamp from "./LiveTimeStamp";
 type Props = {
   article: Article;
 };

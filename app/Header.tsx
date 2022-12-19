@@ -20,7 +20,6 @@ function Header() {
           </h1>
         </Link>
         <div className="flex items-center justify-end space-x-2">
-          {/*darkModeButton */}
           <DarkModeButton />
           <button className="hidden md:inline bg-slate-900 text-white px-4 lg:px-8 lg:py-4 rounded-full dark:bg-slate-800">
             {" "}
@@ -30,7 +29,6 @@ function Header() {
       </div>
 
       <Navlinks />
-      {/* searchBox */}
       <SearchBox />
     </header>
   );
