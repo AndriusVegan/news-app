@@ -11,7 +11,7 @@ async function Homepage() {
   // const news: NewsResponse = await fetchNews(categories.join(","));
   // joins or list all categories
 
-  console.log(news);
+  // console.log(news);
   return (
     <div>
       <NewsList news={news} />

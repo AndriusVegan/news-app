@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
+import React from "react";
+import LiveTimeStamp from "../LiveTimeStamp";
+
 type Props = {
   searchParams?: Article;
 };
-
-import React from "react";
-import LiveTimeStamp from "../LiveTimeStamp";
 
 function ArticlePage({ searchParams }: Props) {
   if (
@@ -29,15 +29,16 @@ function ArticlePage({ searchParams }: Props) {
           <h1 className="headerTitle px-0 no-underline pg-2">
             {article.title}
           </h1>
+
+          <div className="flex divide-x-2 space-x-4">
+            <h2 className="font-bold">{article.author || "unknown"}</h2>
+            <h2 className="font-bold pl-4">{article.source}</h2>
+            <p className="pl-4">
+              <LiveTimeStamp time={article.published_at} />
+            </p>
+          </div>
+          <p className="pt-4">{article.description}</p>
         </div>
-        <div className="flex divide-x-2 space-x-4">
-          <h2 className="font-bold">{article.author || "unknown"}</h2>
-          <h2 className="font-bold pl-4">{article.source}</h2>
-          <p className="pl-4">
-            <LiveTimeStamp time={article.published_at} />
-          </p>
-        </div>
-        <p className="pt-4">{article.description}</p>
       </section>
     </article>
   );
